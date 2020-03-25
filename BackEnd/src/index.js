@@ -1,12 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const routes = require("./routes");
 
 const app = express();
-//teste
-//teste
-//teste
-//teste
 
 mongoose.connect(
   "mongodb+srv://dyksondev:dykson1201@cluster0-pf6mo.mongodb.net/week10?retryWrites=true&w=majority",
@@ -16,6 +13,7 @@ mongoose.connect(
   }
 );
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
